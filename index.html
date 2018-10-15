@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这是我的主页</title>
+    <link rel="icon" href="./image/favicon.ico">
+    <link rel="stylesheet" href="./src/index.css">
+    <script src="./src/jquery.js"></script>
+</head>
+<body>
+    <button id="btn">点击我展开内容</button>
+    <div class="box">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis eligendi, eos error fugiat ipsa labore nesciunt omnis saepe, tempora vitae voluptates voluptatum! Dolor dolore eum maxime recusandae ut!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis eligendi, eos error fugiat ipsa labore nesciunt omnis saepe, tempora vitae voluptates voluptatum! Dolor dolore eum maxime recusandae ut!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis eligendi, eos error fugiat ipsa labore nesciunt omnis saepe, tempora vitae voluptates voluptatum! Dolor dolore eum maxime recusandae ut!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur corporis eligendi, eos error fugiat ipsa labore nesciunt omnis saepe, tempora vitae voluptates voluptatum! Dolor dolore eum maxime recusandae ut!
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    var btn = $("#btn");
+    var box = $(".box");
+    btn.click(function (event) {
+        // div.toggle();
+        box.show();
+    });
+    $('body').click(function(e) {
+        var target = $(e.target);
+        // 如果.box或者#btn下面还有子元素，可使用
+        // !target.is('#btn *') && !target.is('.box *')
+        if(!target.is('#btn') && !target.is('.box')) {
+            if ( box.is(':visible') ) {
+                box.hide();
+            }
+        }
+    });
+</script>
